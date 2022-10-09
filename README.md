@@ -15,3 +15,6 @@ Update app.service
 ##### v0.0.4
 Create Dockerfile
 Create function and route count requests
+
+##### v0.0.5
+Update app.service

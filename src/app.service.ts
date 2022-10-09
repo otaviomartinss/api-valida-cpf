@@ -5,7 +5,7 @@ import { PrismaService } from './PrismaService';
 export class AppService {
   constructor(private prisma: PrismaService){}
   getHello(): string {
-    return 'Hello World!';
+    return 'API online!';
   }
 
   async requests(){
