@@ -7,4 +7,7 @@ Create nest project
 create Function validacpf 
 
 ##### v0.0.2
-install prisma
+Install prisma
+
+##### v0.0.3
+Update app.service

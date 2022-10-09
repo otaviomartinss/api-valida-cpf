@@ -67,6 +67,20 @@ export class AppService {
     }
     
     if(globalThis.f3 == parseInt(cpf2[9]) && globalThis.f4 == parseInt(cpf2[10])){
+      const validationExists = await this.prisma.validation.findUnique({
+        where: {
+          id: 1,
+        },
+      })
+      if(!validationExists){
+        await this.prisma.validation.create({
+          data: {
+            id: 1,
+            valid: 0,
+            invalid: 0,
+          }
+        })
+      }
       await this.prisma.validation.updateMany({
         where: {
           id: 1,
@@ -80,6 +94,20 @@ export class AppService {
       return true
     }
     else{
+      const validationExists = await this.prisma.validation.findUnique({
+        where: {
+          id: 1,
+        },
+      })
+      if(!validationExists){
+        await this.prisma.validation.create({
+          data: {
+            id: 1,
+            valid: 0,
+            invalid: 0,
+          }
+        })
+      }
       await this.prisma.validation.updateMany({
       where: {
         id: 1,
