@@ -14,4 +14,9 @@ export class AppController {
   async validacpf(@Param("cpf") cpf: string){
     return this.appService.validacpf(cpf)
   }
+
+  @Get("/requests/count")
+  async requests(){
+    return this.appService.requests()
+  }
 }

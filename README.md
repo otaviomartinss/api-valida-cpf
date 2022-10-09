@@ -11,3 +11,7 @@ Install prisma
 
 ##### v0.0.3
 Update app.service
+
+##### v0.0.4
+Create Dockerfile
+Create function and route count requests

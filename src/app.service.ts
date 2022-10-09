@@ -8,6 +8,14 @@ export class AppService {
     return 'Hello World!';
   }
 
+  async requests(){
+    return await this.prisma.validation.findUnique({
+      where: {
+        id: 1,
+      },
+    })
+  }
+  
   async validacpf(cpf: string){
     
     let cpf2 = cpf

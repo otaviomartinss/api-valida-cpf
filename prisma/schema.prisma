@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgres"
-  url      = "postgres://postgres:otavio@localhost:5433/valida-cpf"
+  url      = "postgresql://postgres:otavio@18.228.119.12:5432/validacpf?schema=public"
 }
 
 model Validation {
