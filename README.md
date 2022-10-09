@@ -5,3 +5,6 @@ Create nest project
 
 ##### v0.0.1
 create Function validacpf 
+
+##### v0.0.2
+install prisma

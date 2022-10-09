@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from './PrismaService';
 
 @Injectable()
 export class AppService {
+  constructor(private prisma: PrismaService){}
   getHello(): string {
     return 'Hello World!';
   }
@@ -14,7 +16,33 @@ export class AppService {
     
     cpf2 = cpf2.replace(/[^0-9]/g,"")
     
-    if(cpf2.length > 11) {return false}
+    if(cpf2.length > 11){
+      const validationExists = await this.prisma.validation.findUnique({
+        where: {
+          id: 1,
+        },
+      })
+      if(!validationExists){
+        await this.prisma.validation.create({
+          data: {
+            id: 1,
+            valid: 0,
+            invalid: 0,
+          }
+        })
+      }
+      await this.prisma.validation.updateMany({
+        where: {
+          id: 1,
+        },
+        data:{
+          invalid:{
+            increment: 1,
+          }
+        }
+      })
+      return false
+    }
     
     let f1 = parseInt(cpf2[0])*1 + parseInt(cpf2[1])*2 + parseInt(cpf2[2])*3 + parseInt(cpf2[3])*4 + parseInt(cpf2[4])*5 + parseInt(cpf2[5])*6 + parseInt(cpf2[6])*7 + parseInt(cpf2[7])*8 + parseInt(cpf2[8])*9
     
@@ -39,9 +67,29 @@ export class AppService {
     }
     
     if(globalThis.f3 == parseInt(cpf2[9]) && globalThis.f4 == parseInt(cpf2[10])){
+      await this.prisma.validation.updateMany({
+        where: {
+          id: 1,
+        },
+        data:{
+          valid:{
+            increment: 1,
+          }
+        }
+      })
       return true
     }
     else{
+      await this.prisma.validation.updateMany({
+      where: {
+        id: 1,
+      },
+      data:{
+        invalid:{
+          increment: 1,
+        }
+      }
+    })
       return false
     }
     
