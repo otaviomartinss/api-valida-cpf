@@ -18,3 +18,6 @@ Create function and route count requests
 
 ##### v0.0.5
 Update app.service
+
+##### v0.0.6
+Deploy

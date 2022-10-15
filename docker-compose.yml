@@ -1,0 +1,27 @@
+
+version: "3.8"
+
+
+services:
+  db:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=validacpf
+      - POSTGRES_PASSWORD=otavio
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  api:
+    build: .
+    command: npm run start:dev
+    volumes:
+      - .:/api
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+volumes:
+  postgres_data:
+
