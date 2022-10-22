@@ -24,3 +24,7 @@ Deploy
 
 ##### v0.0.7
 Excluded prisma
+
+##### v0.1.0
+Fix bug
+Deploy

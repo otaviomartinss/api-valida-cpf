@@ -6,15 +6,15 @@ export class AppService {
     return 'API online!';
   }
   
-  async validacpf(cpf: string){
+  async validacpf(cpff: string){
     
-    let cpf2 = cpf
+    let cpf = cpff
     
-    cpf2 = cpf2.replace(" ", "")
+    cpf = cpf.replace(" ", "")
     
-    cpf2 = cpf2.replace(/[^0-9]/g,"")
+    cpf = cpf.replace(/[^0-9]/g,"")
 
-    let f1 = parseInt(cpf2[0])*1 + parseInt(cpf2[1])*2 + parseInt(cpf2[2])*3 + parseInt(cpf2[3])*4 + parseInt(cpf2[4])*5 + parseInt(cpf2[5])*6 + parseInt(cpf2[6])*7 + parseInt(cpf2[7])*8 + parseInt(cpf2[8])*9
+    let f1 = parseInt(cpf[0])*1 + parseInt(cpf[1])*2 + parseInt(cpf[2])*3 + parseInt(cpf[3])*4 + parseInt(cpf[4])*5 + parseInt(cpf[5])*6 + parseInt(cpf[6])*7 + parseInt(cpf[7])*8 + parseInt(cpf[8])*9
     
     f1 = f1%11
     
@@ -25,7 +25,7 @@ export class AppService {
       globalThis.f3 = f1
     }
     
-    let f2 = parseInt(cpf2[0])*0 + parseInt(cpf2[1])*1 + parseInt(cpf2[2])*2 + parseInt(cpf2[3])*3 + parseInt(cpf2[4])*4 + parseInt(cpf2[5])*5 + parseInt(cpf2[6])*6 + parseInt(cpf2[7])*7 + parseInt(cpf2[8])*8 + f1*9
+    let f2 = parseInt(cpf[0])*0 + parseInt(cpf[1])*1 + parseInt(cpf[2])*2 + parseInt(cpf[3])*3 + parseInt(cpf[4])*4 + parseInt(cpf[5])*5 + parseInt(cpf[6])*6 + parseInt(cpf[7])*7 + parseInt(cpf[8])*8 + globalThis.f3*9
     
     f2 = f2%11
     
@@ -36,7 +36,7 @@ export class AppService {
       globalThis.f4 = f2
     }
     
-    if(globalThis.f3 == parseInt(cpf2[9]) && globalThis.f4 == parseInt(cpf2[10])){
+    if(globalThis.f3 == parseInt(cpf[9]) && globalThis.f4 == parseInt(cpf[10])){
       return true
     }
     else {
