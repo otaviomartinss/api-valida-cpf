@@ -21,3 +21,6 @@ Update app.service
 
 ##### v0.0.6
 Deploy
+
+##### v0.0.7
+Excluded prisma

@@ -15,8 +15,8 @@ export class AppController {
     return this.appService.validacpf(cpf)
   }
 
-  @Get("/requests/count")
+/*   @Get("/requests/count")
   async requests(){
     return this.appService.requests()
-  }
+  } */
 }
