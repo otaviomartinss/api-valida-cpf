@@ -38,3 +38,6 @@ Excluded prisma</br>
 ##### v0.1.0
 Fix bug</br>
 Deploy</br>
+
+##### v0.1.1
+Fix bug</br>

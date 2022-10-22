@@ -14,6 +14,10 @@ export class AppService {
     
     cpf = cpf.replace(/[^0-9]/g,"")
 
+    if (cpf.length > 11){
+      return false
+    }
+
     let f1 = parseInt(cpf[0])*1 + parseInt(cpf[1])*2 + parseInt(cpf[2])*3 + parseInt(cpf[3])*4 + parseInt(cpf[4])*5 + parseInt(cpf[5])*6 + parseInt(cpf[6])*7 + parseInt(cpf[7])*8 + parseInt(cpf[8])*9
     
     f1 = f1%11
