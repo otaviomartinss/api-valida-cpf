@@ -1,5 +1,15 @@
 # API para validação de cpf
 
+Para usar, basta executar os seguintes comandos:
+
+```
+git clone https://github.com/otaviomartinss/api-valida-cpf.git
+npm install
+npm run start:dev
+```
+
+### Versões
+
 ##### v0.0.0
 Create nest project
 
